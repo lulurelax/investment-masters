@@ -12,3 +12,16 @@ recommendations or claims about what any investor currently believes.
 For current claims, ask the agent to identify the dated source first. A 13F
 question must name the reporting entity, filing period and publication date;
 this repository does not fetch or refresh holdings automatically.
+
+## Every profile has a real-source case
+
+[`masters-cases.json`](masters-cases.json) contains one reproducible case for
+each of the 15 profiles. The cases use current public source pages or dated
+filings at run time, and show the question, evidence boundary and expected
+output. They do not invent current holdings or imply endorsement.
+
+Inspect one case:
+
+```bash
+jq '.cases[] | select(.profile == "buffett")' demo/masters-cases.json
+```
